@@ -1,0 +1,7 @@
+@use "../abstracts/mixins" as mixins;
+@import "../abstracts/variables";
+
+footer {
+	background-color: $primary-color;
+	color: $white;
+}

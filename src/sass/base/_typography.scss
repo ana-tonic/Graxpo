@@ -1,0 +1,41 @@
+@use "../abstracts/mixins" as mixins;
+
+* {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	color: $title-color;
+	background-color: $background-color;
+}
+
+h1 {
+	font-size: 2.3rem;
+}
+
+.title-wrapper {
+	margin-top: 5.5rem;
+	margin-bottom: 0;
+	@include mixins.section-title-style();
+}
+
+.text {
+	@include mixins.text-style();
+}
+
+.section-title {
+	.section-description {
+		width: 50%;
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.section-title {
+		.section-description {
+			width: 90%;
+		}
+	}
+}

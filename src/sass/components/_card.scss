@@ -1,0 +1,91 @@
+@use "../abstracts/mixins" as mixins;
+
+.card {
+	border: 3px solid $border-color;
+	background-color: $background-color;
+
+	max-width: 33.3rem;
+	height: 230px;
+	padding: 0px;
+	margin-left: 0.9375rem;
+	margin-right: 0.9375rem;
+
+	transition: 0.5s;
+
+	.card-content {
+		height: 100%;
+		width: 100%;
+
+		.icon-handler {
+			@include mixins.icon-handler(
+				$white,
+				$primary-color,
+				$primary-color,
+				$white,
+				6.641rem,
+				6.641rem
+			);
+		}
+
+		.card-body {
+			height: max-content;
+			width: 100%;
+			margin-top: 8%;
+			padding-right: 30px;
+			text-align: justify;
+			letter-spacing: 0.8px;
+
+			.card-title {
+				margin-bottom: 5%;
+				font-family: $title-font;
+				color: $text-color;
+				font-weight: 700;
+				word-spacing: 0.25;
+			}
+
+			.dash {
+				margin: 5% 0%;
+				@include mixins.dash-appearance($card-dash-color, 10%);
+			}
+		}
+	}
+}
+
+.card:hover {
+	background-color: $primary-color;
+	border: none;
+
+	.card-content {
+		.icon-handler {
+			background-color: $white;
+		}
+
+		i[class|="fa"] {
+			color: $primary-color;
+		}
+
+		.dash {
+			@include mixins.dash-appearance($white, 10%);
+		}
+
+		.card-title {
+			color: $white;
+		}
+
+		.text {
+			color: $white;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.card {
+		overflow-y: auto;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.card {
+		max-width: 95%;
+	}
+}

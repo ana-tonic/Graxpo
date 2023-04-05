@@ -1,0 +1,64 @@
+@use "../abstracts/mixins" as mixins;
+@import "../abstracts/variables";
+
+.service {
+	padding-top: 1rem;
+
+	.service-content {
+		background-color: $primary-color;
+		margin-top: 1.25rem;
+
+		.service-partial {
+			.row {
+				width: 100%;
+			}
+
+			.service-body {
+				margin-top: 15%;
+			}
+
+			.service-body.text-left {
+				margin-left: 15%;
+			}
+
+			h6 {
+				@include mixins.section-title-style($white);
+			}
+			.dash {
+				@include mixins.dash-appearance($card-dash-color, 5%);
+				margin-bottom: 1.3rem;
+			}
+
+			p {
+				@include mixins.text-style($white);
+				max-width: 70%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.service {
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.service-content .service-partial {
+			.service-body.text-left {
+				margin-left: 0;
+			}
+
+			.service-body {
+				margin-top: 15%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				p {
+					max-width: 90%;
+				}
+			}
+		}
+	}
+}

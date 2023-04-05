@@ -1,0 +1,76 @@
+@use "../abstracts/mixins" as mixins;
+@import "../abstracts/variables";
+
+// three-simple-steps-section
+
+.three-simple-steps {
+	margin-bottom: 2.5rem;
+
+	.steps-content {
+		margin-top: 1rem;
+	}
+
+	.dash {
+		@include mixins.dash-appearance($dash-color, 5%);
+	}
+
+	h6 {
+		font-family: $title-font;
+		color: $title-color;
+		word-spacing: 0.25rem;
+		margin-top: 2rem;
+	}
+
+	.icon-handler {
+		@include mixins.icon-handler(
+			$primary-color,
+			$icon-handler-color,
+			$white,
+			$primary-color,
+			5.188rem,
+			5.188rem
+		);
+
+		margin-top: 0px;
+	}
+
+	.circle {
+		border: 2px solid $icon-handler-circle;
+		background-color: $background-color;
+		width: 6.5rem;
+		height: 6.5rem;
+		border-radius: 50%;
+		transition: 0.5s;
+
+		&:hover {
+			border-color: $primary-color;
+			cursor: pointer;
+
+			.icon-handler {
+				background-color: $primary-color;
+				color: $white;
+			}
+		}
+	}
+
+	p {
+		text-align: center;
+		width: 80%;
+	}
+
+	.center:after {
+		position: absolute;
+		content: "";
+		border-top: 2px solid $connection-dash-color;
+		width: 50%;
+		z-index: -1;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.three-simple-steps {
+		.center:after {
+			display: none;
+		}
+	}
+}

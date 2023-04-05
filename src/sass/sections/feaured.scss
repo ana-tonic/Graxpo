@@ -1,0 +1,45 @@
+@use "../abstracts/mixins" as mixins;
+@import "../abstracts/variables";
+
+//featured section
+
+.featured {
+	background-color: $dark-background-color;
+
+	.dash {
+		@include mixins.dash-appearance($dash-color, 4%);
+	}
+
+	.featured-content {
+		margin-top: 1.813rem;
+
+		.featured-partial {
+			position: relative;
+		}
+
+		.row {
+			width: 100%;
+		}
+	}
+}
+
+.featured-partial:hover .featured-hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.featured-hover {
+	@include mixins.overlay-structure();
+
+	button {
+		@include mixins.button-style(1px solid white);
+	}
+
+	.btn:hover {
+		border: 1px solid white;
+	}
+
+	.btn:focus {
+		border: 1px solid white;
+	}
+}

@@ -1,0 +1,67 @@
+// header section
+
+header {
+	background-color: $banner-color;
+
+	.logo {
+		font-family: "Leckerli One", cursive;
+		font-size: 1.75rem;
+		color: $primary-color;
+		margin-left: 6.25rem;
+	}
+
+	.navbar-wraper {
+		background-color: $banner-color;
+		z-index: 3;
+		padding-left: 0px;
+	}
+
+	.navbar-collapse {
+		background-color: $banner-color;
+		z-index: 3;
+	}
+
+	.navbar {
+		font-family: $text-font;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+	}
+
+	.navbar-nav {
+		margin-right: 9.375rem;
+
+		.nav-link {
+			color: $title-color;
+
+			&:hover {
+				color: $primary-color;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.navbar-wraper {
+		padding-right: 0;
+		padding-top: 0.5rem;
+		width: 100%;
+	}
+
+	.navbar {
+		display: flex;
+		justify-content: flex-end;
+		text-align: right;
+
+		.navbar-toggler {
+			margin-bottom: 3px;
+		}
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.navbar {
+		.navbar-toggler {
+			margin-right: 0.5rem;
+		}
+	}
+}

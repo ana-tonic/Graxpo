@@ -1,0 +1,139 @@
+@use "../abstracts/mixins" as mixins;
+@import "../abstracts/variables";
+
+.pricing {
+	padding-top: 1rem;
+
+	.row {
+		width: 100%;
+	}
+
+	.dash {
+		@include mixins.dash-appearance($dash-color, 4%);
+	}
+
+	&__content {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.pricing-card {
+		border: 1px solid $card-dash-color;
+		border-radius: 3%;
+		height: 30rem;
+		width: 20rem;
+		content: "";
+		transition: 0.3s;
+
+		h5 {
+			@include mixins.section-title-style($text-color);
+			padding: 1.8rem 0;
+			margin-bottom: 0;
+		}
+
+		p {
+			font-family: $text-font;
+			font-size: 0.813rem;
+			color: $text-color;
+			margin-bottom: 0.375rem;
+			margin-top: 0.313rem;
+		}
+
+		.x {
+			font-family: $title-font;
+			font-size: 1.25rem;
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+
+		.dash {
+			width: 100%;
+			margin: 0px;
+			border-width: 0px;
+			border-top: 1px solid $card-dash-color;
+			margin-bottom: 0.563rem;
+			margin-top: 0.25rem;
+		}
+
+		button {
+			border: 1px solid rgb(185, 185, 185);
+			border-radius: 10%;
+			font-family: $text-font;
+			color: $text-color;
+			font-size: 13px;
+			width: 7.25rem;
+			height: 2rem;
+			margin-top: 1rem;
+			margin-bottom: 1.563rem;
+			transition: 0.3s;
+
+			&:hover {
+				background-color: $primary-color;
+				border: none;
+				color: $white;
+			}
+		}
+	}
+
+	.pricing-card:hover {
+		cursor: pointer;
+
+		box-shadow: 5px 5px 10px rgb(215, 215, 215),
+			-5px -5px 10px rgb(215, 215, 215);
+	}
+
+	.left-card {
+		padding-left: 11%;
+	}
+
+	.central-card {
+		padding-left: 6.3%;
+	}
+
+	.right-card {
+		padding-left: 1.7%;
+	}
+}
+
+@media only screen and (max-width: 992px) and (min-width: 768px) {
+	.pricing {
+		&__content .row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			.pricing-card {
+				margin-top: 1rem;
+				height: fit-content;
+				width: auto;
+			}
+		}
+
+		.left-card,
+		.central-card,
+		.right-card {
+			padding-left: 0;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.pricing {
+		.pricing-card {
+			margin-top: 1rem;
+		}
+
+		.row {
+			margin: 0px;
+		}
+
+		.left-card,
+		.central-card,
+		.right-card {
+			padding-left: 0;
+			padding-right: 0;
+			display: flex;
+			justify-content: center;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+@use "../abstracts/mixins" as mixins;
+@import "../abstracts/variables";
+
+// keep exploring section
+
+.keep-exploring {
+	background: url("/src/images/cta.png");
+	color: $white;
+
+	.keep-exploring-body {
+		padding: 6.5rem 0rem;
+
+		.row {
+			width: 100%;
+		}
+
+		h2,
+		h5 {
+			@include mixins.section-title-style($white, 300);
+			margin-bottom: 1rem;
+		}
+	}
+}

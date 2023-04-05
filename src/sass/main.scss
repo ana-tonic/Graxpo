@@ -1,0 +1,26 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/card";
+
+@import "layout/navigation";
+@import "layout/footer";
+
+@import "pages/home";
+
+@import "sections/title";
+@import "sections/about";
+@import "sections/what-we-do";
+@import "sections/counter";
+@import "sections/steps";
+@import "sections/feaured";
+@import "sections/service.scss";
+@import "sections/portfolio.scss";
+@import "sections/team.scss";
+@import "sections/pricing-table.scss";
+@import "sections/contact.scss";

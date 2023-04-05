@@ -1,0 +1,14 @@
+@use "../abstracts/mixins" as mixins;
+@import "../abstracts/variables";
+
+// what we do section
+
+.what-we-do {
+	.dash {
+		@include mixins.dash-appearance($dash-color, 4%);
+	}
+
+	.wwd-body {
+		margin-top: 0.9375rem;
+	}
+}

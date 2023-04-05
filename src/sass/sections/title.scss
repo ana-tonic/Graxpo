@@ -1,0 +1,108 @@
+@use "../abstracts/mixins" as mixins;
+@import "../abstracts/variables";
+
+// title section
+
+.title-section {
+	font-family: $title-font;
+	font-weight: 500;
+	word-spacing: 0.25;
+	height: 50rem;
+	background-color: $banner-color;
+
+	.title-wraper {
+		color: $title-color;
+		letter-spacing: 0.1rem;
+		z-index: 2;
+	}
+
+	.banner-subtitle {
+		color: $text-color;
+		letter-spacing: 0.344rem;
+		z-index: 2;
+	}
+
+	.scroll {
+		color: $primary-color;
+		width: 100%;
+		bottom: 3.313rem;
+
+		font-size: 0.75rem;
+		font-family: $text-font;
+
+		&:hover {
+			color: $primary-color;
+		}
+
+		.img-scroll {
+			margin-bottom: 0.3215rem;
+		}
+	}
+}
+
+img[class^="banner-image"] {
+	position: absolute;
+	z-index: 1;
+}
+
+.headphones {
+	top: 11.125rem;
+	left: -0.75rem;
+	width: 15.75rem;
+	height: 21.188rem;
+}
+
+.sunglasses {
+	top: 30.625rem;
+	left: 13.563rem;
+	width: 11rem;
+	height: 5.813rem;
+}
+
+.dark-pencil {
+	top: 41.375rem;
+	left: 5rem;
+	width: 12.313rem;
+	height: 4.188rem;
+}
+
+.light-pencil {
+	top: 43.313rem;
+	left: 6.875rem;
+	width: 10.875rem;
+	height: 2.688rem;
+}
+
+.cork {
+	top: 17.5rem;
+	right: 4.938rem;
+	width: 8.563rem;
+	height: 7.125rem;
+}
+
+.glass {
+	top: 16.5rem;
+	right: 4.625rem;
+	width: 7.75rem;
+	height: 6.063rem;
+}
+
+.pen-holder {
+	top: 29.313rem;
+	right: 1.75rem;
+	width: 11rem;
+	height: 9.875rem;
+}
+
+.mouse {
+	right: 14.25rem;
+	top: 38rem;
+	width: 6.5rem;
+	height: 7.563rem;
+}
+
+@media only screen and (max-width: 576px) {
+	img[class^="banner-image"] {
+		display: none;
+	}
+}

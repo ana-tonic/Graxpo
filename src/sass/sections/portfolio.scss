@@ -1,0 +1,144 @@
+@use "../abstracts/mixins" as mixins;
+@import "../abstracts/variables";
+
+.portfolio {
+	width: 100%;
+	margin-bottom: 6.25rem;
+	padding-top: 1rem;
+
+	.container {
+		width: 100%;
+
+		.row {
+			width: 100%;
+		}
+	}
+
+	.row {
+		width: 100%;
+	}
+
+	ul {
+		list-style: none;
+
+		.dash {
+			@include mixins.dash-appearance($dash-color, 2rem);
+			margin-top: 0.9rem;
+			margin-bottom: 0;
+			visibility: hidden;
+		}
+
+		#all-categories {
+			.dash {
+				visibility: visible;
+			}
+		}
+	}
+
+	li {
+		padding: 5px 0.625rem 5px 0.625rem;
+		cursor: pointer;
+
+		&:hover {
+			color: $primary-color;
+		}
+	}
+
+	.container .section-title .dash {
+		@include mixins.dash-appearance($dash-color, 4%);
+	}
+
+	.portfolio-main {
+		width: 100%;
+	}
+
+	.collage {
+		margin-top: 2rem;
+		columns: 3;
+		column-gap: 0;
+		width: 100%;
+
+		.row {
+			width: 100%;
+		}
+
+		img {
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+
+	.box {
+		position: relative;
+	}
+
+	.box:hover .overlay {
+		cursor: pointer;
+		opacity: 0.8;
+	}
+
+	.overlay {
+		@include mixins.overlay-structure();
+
+		&__content {
+			padding-left: 10%;
+
+			h5 {
+				@include mixins.section-title-style($white);
+			}
+
+			h6 {
+				@include mixins.section-title-style($white, 300);
+				letter-spacing: 0.125rem;
+			}
+
+			.dash {
+				@include mixins.dash-appearance($connection-dash-color, 15%);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.portfolio .overlay__content {
+		h5 {
+			font-size: 1rem;
+		}
+
+		h6 {
+			font-size: 0.75rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.portfolio {
+		.row {
+			width: 100%;
+			margin-left: -6px;
+			margin-right: -2px;
+		}
+
+		.overlay {
+			position: absolute;
+			&__content {
+				padding-left: 0;
+				position: relative;
+				height: 100%;
+				width: 100%;
+
+				h5 {
+					font-size: 0.75rem;
+				}
+
+				h6 {
+					font-size: 0.5rem;
+				}
+
+				.dash {
+					display: none;
+				}
+			}
+		}
+	}
+}

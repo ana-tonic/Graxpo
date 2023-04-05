@@ -1,0 +1,25 @@
+@use "../abstracts/mixins" as mixins;
+@import "../abstracts/variables";
+
+.btn {
+	@include mixins.button-style();
+	transition: transform 0.5s;
+
+	&:hover {
+		@include mixins.button-style();
+		transform: scale(1.2);
+	}
+
+	&:focus {
+		@include mixins.button-style();
+		transition: transform 0.5s;
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.btn {
+		width: 126px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
